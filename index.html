@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Share Modal</title>
+    <link rel="stylesheet" href="./Assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Wrapper -->
+    <div class="relative w-screen min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] 
+        flex justify-center items-center overflow-hidden">
+        <!-- circle 1 -->
+        <div class="absolute w-[13em] h-[13em] backGroundCircle1 rounded-full p-6 top-[2%] left-[20%] z-0"
+            style="animation: circle1animation 15s ease-in-out infinite;">
+        </div>
+
+        <!-- circle 2 -->
+        <div class="absolute w-[15em] h-[15em] backGroundCircle2 rounded-full p-6 bottom-[5%] right-[30%] z-0"
+            style="animation: circle2animation 15s ease-in-out infinite;">
+        </div>
+
+        <!-- Card section -->
+        <div class="flex flex-col h-[450px] items-center justify-center space-y-7 border border-white/10 rounded-lg bg-white/5
+            px-[30px] py-[40px] z-50 backdrop-blur-xl bg-clip-padding shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+            <div class="w-40 h-40 rounded-full overflow-hidden border-2 
+                border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                <img src="./Assets/HeroIcon.jpg" alt="" class="w-full h-full object-cover">
+            </div>
+            <h2 class="font-bold text-4xl text-white tracking-wide">Aditya Pratap Singh</h2>
+            <p class="text-[#c5c5c5] font-medium text-xl italic">Full Stack Developer</p>
+            <!-- Button section -->
+            <div class="flex flex-row gap-4">
+                <!-- Share profile -->
+                <button onclick="openModal()" class="text-white border-2 border-white/20 rounded-md text-sm px-3 py-1 bg-white/10
+                    hover:bg-white hover:text-black transition-all duration-300 flex flex-row gap-1
+                    shadow-md hover:shadow-[0_0_10px_#fff]">
+                    <i class="fa-solid fa-share text-sm"></i>
+                    Share My Profile
+                </button>
+
+                <!-- Follow me -->
+                <button class="text-white border-white/20 border-2 rounded-md text-sm bg-white/10
+                    px-8 py-[6px] hover:bg-white hover:text-black shadow-md hover:shadow-[0_0_10px_#fff]
+                    transition-all duration-300">
+                    Follow Me
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Share modal -->
+    <div class="bg-[#00000088] w-[500px] backdrop-blur-md border-2 border-[#ffffff59] rounded-[20px]
+        fixed top-[35%] left-[35%] h-[250px] px-4 py-4 modal z-[100]">
+        <div class="flex flex-row border-b-2 justify-between">
+            <h2 class="font-extrabold text-[30px] text-white">Share My Profile</h2>
+            <div class="font-bold text-[30px] text-white cursor-pointer">
+                <i onclick="closeModal()" class="fa-solid fa-xmark close"></i>
+            </div>
+        </div>
+
+        <div class="">
+            <p class="font-bold text-lg text-white mt-3">Share this via</p>
+            <div class="flex flex-row items-center justify-between p-8 mr-6 gap-7 iconContainer">
+                <a href="" class="w-[30px] h-[30px]">
+                    <i class="fa-brands fa-facebook text-[25px] bg-[#1771e6]/10
+                    border-2 border-[#1771e6] text-[#1771e6] rounded-full hover:text-[#fff]
+                    transition-all duration-200 p-4 mb-[25px] shadow-md hover:shadow-[0_0_10px_#1771e6]"></i>
+                </a>
+
+                <a href="" class="w-[30px] h-[30px]">
+                    <i class="fa-brands fa-twitter text-[27px] bg-[#1771e6]/10
+                    border-2 border-[#1c99e6]/50 text-[#1c99e6] rounded-full hover:text-[#fff]
+                    transition-all duration-200 p-4 shadow-md hover:shadow-[0_0_10px_#1c99e6]"></i>
+                </a>
+
+                <a href="" class="w-[30px] h-[30px]">
+                    <i class="fa-brands fa-instagram text-[27px]
+                    border-2 border-[#cb2770] text-[#cb2770] rounded-full hover:text-[#fff]
+                    transition-all duration-200 p-4 shadow-md hover:shadow-[0_0_10px_#cb2770]"></i>
+                </a>
+
+                <a href="" class="w-[30px] h-[30px]">
+                    <i class="fa-brands fa-whatsapp text-[27px]
+                    border-2 border-[#2fe664] text-[#2fe664] rounded-full hover:text-[#fff]
+                    transition-all duration-200 p-4 shadow-md hover:shadow-[0_0_10px_#2fe664]"></i>
+                </a>
+
+                <a href="" class="w-[30px] h-[30px]">
+                    <i class="fa-brands fa-telegram text-[27px]
+                    border-2 border-[#0081c2] text-[#0081c2] rounded-full hover:text-[#fff]
+                    transition-all duration-200 p-4 shadow-md hover:shadow-[0_0_10px_#0081c2]"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div onclick="closeModal()" class="overlay"></div>
+    <script src="script.js"></script>
+</body>
+</html>
